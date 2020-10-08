@@ -1,0 +1,20 @@
+{
+  "id": "notebook",
+  "name": "Notebook",
+  "price": 2999,
+  "description": "Macbook Pro é o notebook superpotente da Apple. As versões mais novas do Macbook Pro foram apresentadas durante a WWDC 2012, no dia 6 de junho. O modelo atualizado de 13 polegadas terá o preço inicial de R$ 3.999 e o modelo de entrada de 15",
+  "stock": 12,
+  "img": "./api/products/notebook/notebook-foto.jpg",
+  "reviews": [
+    {
+      "name": "Clebinho",
+      "stars": 5,
+      "description": "Gostei muito do produto, atendeu todas as minhas necessidades."
+    },
+    {
+      "name": "Claudia",
+      "stars": 4,
+      "description": "Produto muito bom, mas poderia ser mais barato."
+    }
+  ]
+}
