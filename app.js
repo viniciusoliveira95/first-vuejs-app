@@ -12,5 +12,10 @@ const vm = new Vue({
   },
   created() {
     this.fetchProducts();
+  },
+  filters: {
+    numberToPrice(value) {
+      return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+    }
   }
 })
