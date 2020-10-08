@@ -10,12 +10,40 @@
 </head>
 <body>
   <div id="app">
+
+    <section class="modal" v-if="product" @click="closeModal">
+      <div class="modal_container">
+        <div class="modal_img">
+          <img :src="product.img" :alt="product.name">
+        </div>
+
+        <div class="modal_data">
+          <button @click="product = false" class="modal_close">X</button>
+          <span class="modal_price">{{product.price}}</span>
+          <h2 class="modal_title">{{product.name}}</h2>
+          <p class="modal_description">{{product.description}}</p>
+          <button class="modal_btn">Adicionar Item</button>
+        </div>
+
+        <div class="modal_review">
+          <h2 class="modal_review_subtitle">Avaliações</h2>
+          <ul>
+            <li v-for="review in product.reviews" class="modal_review_list">
+              <p class="modal_review_description">{{review.description}}</p>
+              <p class="modal_review_name">{{review.name}} | {{review.stars}} estrelas</p>
+      
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="products">
-      <div v-for="product in products" class="product" :key="product.id">
-        <img :src="product.img" :alt="product.name" class="product_img"/>
+      <div @click={openModal(item.id)} v-for="item in products" class="product" :key="item.id">
+        <img :src="item.img" :alt="item.name" class="product_img"/>
         <div class="product_info">
-          <span class="product_price">{{product.price | numberToPrice}}</span>
-          <h2 class="product_title">{{product.name}}</h2>
+          <span class="product_price">{{item.price | numberToPrice}}</span>
+          <h2 class="product_title">{{item.name}}</h2>
         </div>
       </div>
     </section>
